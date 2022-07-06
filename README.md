@@ -1,14 +1,10 @@
 
 
-<div align="center">
-<img src="/images/appiumwithpython.png">
-
 <i>Material recomendado pela <a href="https://github.com/appium/appium/tree/master/sample-code/python#tutorial">documentação oficial do Appium</a>.</i>
 </div>
 
-Se este tutorial te ajudou, não esquece de deixar uma estrelinha ⭐️ 🌟
  
-Este material é um guia para o setup do ambiente de configuração e uso do Appium para automação de testes funcionais em dispositivos móveis. Dentre outros aprendizados, destaco os seguintes pontos como principais aprendizados:
+Este é um guia para o setup do ambiente de configuração e uso do Appium para automação de testes funcionais em dispositivos móveis: <i>&#128513;</i>
 
 <ul>
     <li>Entender como funciona o framework Appium e como fazer o setup desta aplicação nas plataformas: Windows, Linux e Mac;</li>
@@ -19,10 +15,9 @@ Este material é um guia para o setup do ambiente de configuração e uso do App
     <li>Conhecer sos e funcionalidades específicas do Appium.</li>
 </ul>
 
-A versão em inglês deste tutorial está aqui em [appium-en](https://github.com/clarabez/appium-en).
 ___
 
-🗂 **A organização do tutorial se dá nas seguintes seções:**
+🗂 **Seções:**
 <ul>
     <li>Introdução</li>
     <li>Setup do ambiente</li>
@@ -44,22 +39,9 @@ ___
 
 ___
 
-✏️ **Tutoriais contidos aqui**
+## Conhecendo métodos do Appium
 
-- [Tutorial 1: Instalando uma aplicação no meu dispositivo Android emulado](https://github.com/clarabez/appium/blob/master/README.md#tutorial-1-instalando-uma-aplica%C3%A7%C3%A3o-no-meu-dispositivo-android-emulado)
-- [Tutorial 2: Desired Capabilities: o que são e como iniciar uma sessão com o Appium](https://github.com/clarabez/appium/blob/master/README.md#tutorial-2-desired-capabilities-como-iniciar-uma-sess%C3%A3o-com-o-appium)
-- [Tutorial 3: Identificando os elementos da nossa aplicação](https://github.com/clarabez/appium/blob/master/README.md#tutorial-3-identificando-os-elementos-da-nossa-aplica%C3%A7%C3%A3o)
-- [Tutorial 4: Realizando atividades de GESTOS via Appium](https://github.com/clarabez/appium/blob/master/README.md#tutorial-4-realizando-atividades-de-gestos-via-appium)
-- [Tutorial 5: Realizando um fluxo simples de teste funcional](https://github.com/clarabez/appium/blob/master/README.md#tutorial-5-realizando-um-fluxo-simples-de-teste-funcional)
-- [Tutorial 6: Gravando nossas ações e transformando isso em código](https://github.com/clarabez/appium/blob/master/README.md#tutorial-6-gravando-nossas-a%C3%A7%C3%B5es-e-transformando-isso-em-c%C3%B3digo)
-- [Tutorial 7: Operações aritméticas com a Calculadora nativa do Android](https://github.com/clarabez/appium/blob/master/README.md#tutorial-7-opera%C3%A7%C3%B5es-aritm%C3%A9ticas-com-a-calculadora-nativa-do-android)
-- [Tutorial 8: Replicando tudo o que fiz utilizando apenas Python](https://github.com/clarabez/appium/blob/master/README.md#tutorial-8-replicando-tudo-o-que-fiz-utilizando-apenas-python)
-- [Tutorial 9: Operações aritméticas com a Calculadora nativa do Android - Fase 2](https://github.com/clarabez/appium/blob/master/README.md#tutorial-9-opera%C3%A7%C3%B5es-aritm%C3%A9ticas-com-a-calculadora-nativa-do-android---fase-2)
-- [Tutorial 10: Operações aritméticas com a Calculadora nativa do Android - Fase 3: organizando o código com padrões de projeto e realizando fluxo de teste funcional](https://github.com/clarabez/appium/blob/master/README.md#tutorial-10-opera%C3%A7%C3%B5es-aritm%C3%A9ticas-com-a-calculadora-nativa-do-android---fase-3-organizando-o-c%C3%B3digo-com-padr%C3%B5es-de-projeto-e-realizando-fluxo-de-teste-funcional)
-
-## Parte 2 - conhecendo métodos do Appium
-
-A parte 2 deste curso está relacionado a recursos e funcionalidades específicas do Appium. Os exemplos listados aqui serão em Python, mas quase todos os recursos usados aqui também existem em qualquer outra linguagem de programação que o Appium tenha suporte.
+Recursos e funcionalidades específicas do Appium. Os exemplos listados aqui serão em Python, mas quase todos os recursos usados aqui também existem em qualquer outra linguagem de programação que o Appium tenha suporte.
 
 - Comandos sobre o dispositivo
 - Interações
@@ -67,19 +49,9 @@ A parte 2 deste curso está relacionado a recursos e funcionalidades específica
 - Controle do sistema
 ___
 
-🚧 Este documento sofrerá ajustes e complementos ao longo do tempo <i>&#128513;</i>
-
-Este material também está em inglês e pode ser encontrado [aqui](https://github.com/clarabez/appium-en).
-
-Qualquer sugestão de melhoria ou correção, por favor entrar em contato <i>&#128525;</i>
-
-Iniciei a elaboração deste tutorial porque pra aprender essa ferramenta tive que recorrer a diferentes fontes e tive que praticar muito pra ter dicas, criar tutoriais, entender melhor a dinâmica, etc. Espero que este documento seja muito útil pra você e te incentivo a também compartilhar o que você for aprendendo <i>&#129304;</i>
+Este tutorial foi criado pois para aprender essa ferramenta tive que recorrer a diferentes fontes. Espero que este documento seja muito útil pra você e te incentive a também compartilhar seu aprendizado <i>&#129304;</i>
 
 ___
-
-<p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/intro.png">
-</p>
 
 # Um pouco sobre Appium
 
@@ -88,34 +60,30 @@ _Appium_ é uma ferramenta open-source e multi-plataforma (isso quer dizer que f
 Considero _Appium_ uma excelente ferramenta para quem quer começar a aprender automação em dispositivos móveis ou para quem já é da área de mobile e gostaria de se aprofundar mais sobre o assunto.
 
 
-**Links importantes para esta seção:**
+**Links importantes para esta seção:** <i>&#129304;</i>
 
 [Página oficial do Appium](http://appium.io)
 
 [Página oficial do repo do Appium no GitHub](https://github.com/appium/)
 
-Como dito mais acima, a finalidade do _Appium_ é testar aplicações em dispositivos móveis, e aplicações podem ser classificadas em três diferentes naturezas : nativas, híbridas e móveis. Qual a diferença entre elas?
+A finalidade do Appium é testar aplicações em dispositivos móveis, e aplicações podem ser classificadas em três diferentes naturezas : nativas, híbridas e móveis.
+
   - **Nativas:** aquelas aplicações que foram desenvolvidas especificamente para Android ou iOS, ou seja, a partir de seus específicos SDKs.
   - **Híbridas:** aquelas que são desenvolvidas em HTML, CSS, JavaScript e que são compatíveis com qualquer plataforma (Android, iOS, Windows).
   - **Móveis:** aquelas que podemos acessar através de um link, via página web.
 
 ___
 
-<p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/setup.png">
-</p>
+Vamos lá ver os passos para realizarmos o setup do ambiente para Windows, Linux e Mac. 
 
-Nesta seção vamos ver os passos para realizarmos o setup do ambiente para Windows, Linux e Mac. Todos os meus projetos faço utilizando o Mac, então tendo a passar informações mais detalhadas para este SO.
+✨ **Dica muito importante:**
 
+Você também pode optar por uma configuração mais simples e que vai te poupar de muito tempo, Caso deseje pode pular direto para o tópico "Forma simplificada para Windows/Linux/Mac". O mesmo procedimento é utilizado para qualquer sistema operacional.
 
-✨ **Uma dica muito importante:**
+# 📥 Download do necessário
 
-Digo o que fazer para cada sistema operacional, mas você também pode optar por uma configuração mais simples (e efetiva da mesma forma) e que vai te poupar de muito tempo e dor de cabeça - confie em mim :) Se você quiser ir por esse caminho, pode pular direto para o tópico "Forma simplificada para Windows/Linux/Mac". O mesmo procedimento é utilizado para qualquer sistema operacional.
-
-# 📥 Download de tudo que vai ser necessário
-
-Durante o nosso workshop vamos utilizar algumas ferramentas essenciais para a prática de automação. Baixe e instale as seguintes ferramentas, que são comuns para Windows, MAC ou Linux:
-  - **Appium Desktop:** é a interface da ferramenta Appium que será o foco do nosso workshop. O download está [disponível aqui:](https://github.com/appium/appium-desktop/releases/) (aqui tem um acervo para vários Sistemas Operacionais. Baixe apenas aquele que for direcionado para o seu SO.)
+Vamos utilizar algumas ferramentas essenciais para a prática de automação. Baixe e instale as seguintes ferramentas, que são comuns para Windows, MAC ou Linux:
+  - **Appium Desktop:** é a interface da ferramenta Appium que será o foco do nosso tutorial. O download está [disponível aqui:](https://github.com/appium/appium-desktop/releases/) (aqui tem um acervo para vários Sistemas Operacionais. Baixe apenas aquele que for direcionado para o seu SO.)
   
   - **JDK (JAVA Development Kit):** https://www.java.com/pt_BR/download/ 
 
@@ -126,7 +94,7 @@ Durante o nosso workshop vamos utilizar algumas ferramentas essenciais para a pr
   
 # Variáveis de ambiente - Mac:
 
-Depois de realizadas as instalações do Appium Desktop, JAVA, Android Studio e da sua IDE, é hora de configurarmos as variáveis de ambiente para que seu sistema operacional identifique os processos  e as aplicações de forma mais rápida e prática.
+Feito as devidas instalações é hora de configurarmos as variáveis de ambiente para que seu sistema operacional identifique os processos  e as aplicações de forma mais rápida e prática.
 Para isso, abra o seu terminal, identifique a localização de instalação dos pacotes e os exporte para a variável PATH.
 Após identificar a localização de onde foi instalado o seu Android, copie o caminho da pasta.
 Por exemplo, para macOS a localização normalmente fica em:
@@ -165,20 +133,20 @@ export PATH=$JAVA_HOME/bin:$PATH
 ```
 
 # Variáveis de ambiente - Windows:
-Após o download (link acima) e instalação do JDK do seu ambiente Windows, é hora de configurar as variáveis de ambiente. Para isso, siga as opções de menu:
-1. Propriedades do Sistema >> Configurações avançadas do sistema >> Variáveis de ambiente >> Variáveis de usuário >> Novo.
-2. Insira o nome da variável como "JAVA_HOME" e insira como valor a localização exata do seu arquivo jre, por exemplo, "C:\Arquivos de Programa\Java\jdk1.2.2_2\jre".
-3. Na seção de variáveis de sistema, dê um clique duplo em "Path" e adicione a expressão "%JAVA_HOME%\bin". Isto significa que você está adicionando o mesmo valor criado para JAVA_HOME, só que também para a pasta \bin.
-4. É só clicar OK e aplicar as mudanças de configuração.
+Após o download "link acima" e instalação do JDK do seu ambiente Windows, é hora de configurar as variáveis de ambiente. Para isso, siga as opções de menu:
+1- Propriedades do Sistema >> Configurações avançadas do sistema >> Variáveis de ambiente >> Variáveis de usuário >> Novo.
+2- Insira o nome da variável como "JAVA_HOME" e insira como valor a localização exata do seu arquivo jre, por exemplo, "C:\Arquivos de Programa\Java\jdk1.2.2_2\jre".
+3- Na seção de variáveis de sistema, dê um clique duplo em "Path" e adicione a expressão "%JAVA_HOME%\bin". Isto significa que você está adicionando o mesmo valor criado para JAVA_HOME, só que também para a pasta \bin.
+4- É só clicar OK e aplicar as mudanças de configuração.
 
-Agora, para baixar (link acima) e instalar o Android SDK, siga os passos:
-1. Siga o mesmo passo #1 descrito acima até alcançar o campo de variáveis de ambiente.
+Agora baixe "link acima" e instale o Android SDK, siga os passos:
+1. Siga o mesmo passo #1- descrito acima até alcançar o campo de variáveis de ambiente.
 2. Agora, insira o nome da variável como "ANDROID_HOME" e insira como valor a localização exata onde seu Android SDK foi instalado, por exemplo, "C:\android-sdk".
 3. Agora, mais uma vez precisamos adicionar o valor da sua nova variável à sua variável global do sistema, que é o Path: "%ANDROID_HOME%\platform-tools" e também "%ANDROID_HOME\tools%".
-4. É só clicar OK e aplicar as mudanças de configuração.
+4. É só clicar OK e aplicar as alterações.
 
 # Variáveis de ambiente - Linux:
-A configuração de variáveis de ambiente para Linux funciona de forma muito semelhante a do Mac. Basta que vc identifique o caminho exato de instalação do JDK e do Android e aplicar (através de export) os caminhos no seu arquivo de configuração global, que neste caso é o ~/.bashrc
+A configuração de variáveis de ambiente para Linux é muito semelhante a do Mac. Basta que vc identifique o caminho exato de instalação do JDK e do Android e aplicar (através de export) os caminhos no seu arquivo de configuração global, que neste caso é o ~/.bashrc
 
 Por exemplo, para Linux a localização normalmente fica em:
 
@@ -204,14 +172,14 @@ export JAVA_HOME=/your/path/to/jdk1.8.0_112.jdk/Contents/Home
 export PATH=$JAVA_HOME/bin:$PATH
 ```
 
-✨ **Dica - Windows/Linux/Mac:**
+✨ **Dica muito importante - Windows/Linux/Mac:**
 Para identificar onde está a sua pasta para JAVA_HOME, é só usar o seguinte comando no terminal:
 ```bash
 which java
 ```
 Deverá ser retornado o caminho até seu pacote JAVA.
 
-✨ **Dica 2 - Linux/Mac:**
+✨ **Dica muito importante - Linux/Mac:**
 Para evitar que suas variáveis de ambiente percam os valores, salve o conteúdo da variável no seu arquivo bashrc (Linux) ou bash_profile (macOS). Após salvar os valores, não esqueça de "compilar" o arquivo para as mudanças serem refletidas:
 Para macOS:
 ```bash
@@ -223,50 +191,46 @@ Para Linux:
 source ~/.bashrc
 ```
 
-# Forma simplificada para Windows/Linux/Mac
-Se você quiser simplificar a sua configuração de ambiente, é só utilizar o atalho de configuração do Appium e inserir manualmente os caminhos para as suas variáveis ANDROID_HOME e JAVA_HOME. Esta etapa é bem mais simples e da mesma forma efetiva para uso da ferramenta. Basta seguir os passos adiante:
+# Forma simplificada para Windows-Linux-Mac
+Caso deseje simplificar a sua configuração de ambiente, é só utilizar o atalho de configuração do Appium e inserir manualmente os caminhos para as suas variáveis ANDROID_HOME e JAVA_HOME. Esta etapa é bem mais simples. Basta seguir os passos adiante:
 
 Abra sua ferramenta Appium Desktop e clique no botão "Edit Configurations".
 <p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/appiumFirstScreen.png">
+<img src="https://github.com/fabiosouthsystem/appium/blob/main/1.png">
 </p>
 
-Quando você clicar em "Edit Configurations", um popup vai abrir com 2 campos: ANDROID_HOME e JAVA_HOME. É só você identificar estes caminhos na sua máquina (no setup de configuração para cada SO eu deixei comandos e dicas para obter estes valores), copiar e colar nestes campos e em seguida clicar em "Save and Restart". Pronto, configuração do Appium realizada com sucesso :)
+Ao clicar em "Edit Configurations", uma nova janela vai abrir com 2 campos: ANDROID_HOME e JAVA_HOME. É só você identificar estes caminhos na sua máquina conforme deixei acima comandos e dicas para obter estes valores, copiar e colar nestes campos e em seguida clicar em "Save and Restart". configuração do Appium realizada com sucesso!!
 
 <p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/appiumSecondScreen.png">
+<img src="https://github.com/fabiosouthsystem/appium/blob/main/2.png">
 </p>
 
 ___
 
 # Instalando o Appium
 
-A instalação do Appium é bastante simples e não requer configuração adicional - além da do Android e do JDK. Basta baixar o Appium Desktop na página oficial do Appium(como no link do começo do documento) ou via linha de comando através do terminal:
+A instalação do Appium é bastante simples e não requer configuração adicional, além da do Android e do JDK é necessário baixar o Appium Desktop na página oficial do Appium "conforme link acima" ou via linha de comando através do terminal:
 
 ```bash
 npm install -g appium
 ```
 **ATENÇÃO:** Não instale o Appium com sudo.
 
-✨ **Dica - O que é npm?**
+✨ **Dica muito importante - npm????**
 
 Npm é o gerenciador de downloads para pacotes node.js. 
 
 ___
 
-<p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/appium-doctor.png">
-</p>
+# Vamos validar se tudo está ok?
 
-# Como validar se tudo tá configurado ou se falta algo?
-
-Uma funcionalidade bem legal que o Appium oferece é o pacote <em>Appium-doctor</em>, cuja finalidade é conferir o checklist necessário para que seu ambiente funcione. Caso algo esteja faltando, o Appium-doctor te lista exatamente o que falta. Ele também confirma o que tá configurado como esperado. Para instalá-lo, é só instalar o pacote npm no seu terminal:
+Uma funcionalidade que o Appium oferece é o pacote <em>"Appium-doctor"</em>, que confere o checklist necessário para que seu ambiente funcione. Caso algo esteja faltando, o Appium-doctor te lista exatamente o que falta. Ele também confirma o que tá configurado como esperado. Para instalá-lo, é só instalar o pacote npm no seu terminal:
 
 ```bash
 npm install -g appium-doctor --android
 ```
 
-✨ **Dica:**
+✨ **Dica muito importante:**
 Estamos usando a flag **--android** para indicar a plataforma que vamos usar o Appium. Caso fôssemos usar o iOS, usaríamos a flag **--ios--**.
 
 Depois de instalado o <em>Appium-doctor</em>, é só fazer a chamada via terminal:
@@ -297,15 +261,16 @@ WARN AppiumDoctor  ✖ Bin directory for $JAVA_HOME is not set
 info AppiumDoctor ### Diagnostic for necessary dependencies completed, 7 fixes needed. ###
 ```
 
-Tudo que estiver acompanhado do símbolo **✔** significa que está instalado corretamente.
-Tudo que estiver acompanhado do símbolo **✖** significa que *NÃO* está instalado ou identificado. Esses casos você deve ajustar.
+Tudo que estiver acompanhado do símbolo **✔** está instalado corretamente.
+Tudo que estiver acompanhado do símbolo **✖** NÃO está instalado ou identificado. deve ser ajustado.
 
+✨ **Dica muito importante:**
 O pacote do **Xcode** é específico para iOS, então, para Android, não devemos nos preocupar.
 
 ___
-# Checklist de tudo o que fizemos até agora
+# Checklist do que já fizemos até agora
 
-Se você chegou até aqui, significa que provavelmente o seu setup está pronto e agora você já pode usar todos os recursos do Appium! Só para checar, instalamos e configuramos:
+Até aqui, significa que provavelmente o seu setup está pronto e você já pode usar todos os recursos do Appium!
 - Appium Desktop **✔**
 - Android Studio (pacote AVD) **✔**
 - JAVA **✔**
@@ -314,35 +279,30 @@ Se você chegou até aqui, significa que provavelmente o seu setup está pronto 
 
 ___
 
-<p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/appiumIniciando.png">
-</p>
+# Iniciando o Appium
 
-# Iniciando com o Appium
-
-Depois de tudo configurado, é hora de iniciarmos com o Appium Desktop.
-Assim que abrimos o Appium Desktop, esta é a carinha inicial que temos contato:
+Agora é hora de iniciarmos o Appium Desktop.
 
 <p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/appiumFirstScreen.png">
+<img src="https://github.com/fabiosouthsystem/appium/blob/main/1.png">
 </p>
 
-Observe que de cara já temos 2 campos preenchidos:<br>
+Assim que aberto o appium traz preenchidos os campos:<br>
 **HOST:** 0.0.0.0<br>
 **Port:** 4723
 
-Estes são valores padrões do Appium e indicam que sempre que você começar a realizar requisições (lembra que o Appium é baseado em servidor HTTP?), o Appium irá utilizar o Host 0.0.0.0 e o serviço irá funcionar na porta 4723. Caso você queira mudar estes valores (quando algum outro serviço já está alocado para esta porta, por exemplo), é só você realizar a customização dessa configuração manualmente clicando no botão **Advanced**, que fica ao lado do já selecionado **Simple**. Você também pode salvar suas configurações personalizadas e exportá-las através do button **Presets**. Eu, particularmente, nunca precisei utilizar nenhuma das configurações além das que já vem por padrão. Também não vi nenhum material pela internet em que fosse necessário customizar a configuração. Se quer um conselho, siga com essa configuração padrão que tudo vai funcionar bem :)
+Estes são valores padrões do Appium e indicam que sempre que você começar a realizar requisições (lembra que o Appium é baseado em servidor HTTP?), o Appium irá utilizar o Host 0.0.0.0 e o serviço irá funcionar na porta 4723. Caso você queira mudar estes valores (quando algum outro serviço já está alocado para esta porta, por exemplo), é só você realizar a customização dessa configuração manualmente clicando no botão **Advanced**, que fica ao lado do já selecionado **Simple**. Você também pode salvar suas configurações personalizadas e exportá-las através do button **Presets**. Eu, particularmente, nunca precisei utilizar nenhuma das configurações além das que já vem por padrão. Também não vi nenhum material pela internet em que fosse necessário customizar a configuração. siga com essa configuração padrão que tudo vai funcionar bem.
 
-Explicada essa tela inicial, agora podemos clicar em **Start Server** e observar já a segunda tela do Appium: uma escuta da chamada HTTP. Observe que ele indica aí exatamente o endereço onde o serviço está sendo executado (que são inseridos nos campos de <i>Host</i> e <i>Port</i> da tela anterior, onde deixamos os valores padrões).
+Agora podemos clicar em **Start Server** e observar a segunda tela do Appium: uma escuta da chamada HTTP. Observe que ele indica aí exatamente o endereço onde o serviço está sendo executado (que são inseridos nos campos de <i>Host</i> e <i>Port</i> da tela anterior, onde deixamos os valores padrões).
 
 <p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/AppiumStarted2.png">
+<img src="https://github.com/fabiosouthsystem/appium/blob/main/3.png">
 </p>
 
 Agora podemos ir para a tela seguinte do Appium, onde vamos começar iniciar uma sessão (essa é a expressão utilizada quando vamos iniciar o uso do Appium), e pra isso vamos clicar no ícone da lupa, onde diz: **Start Inspector Session** (como a imagem abaixo).
 
 <p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/startsession.png">
+<img src="https://github.com/fabiosouthsystem/appium/blob/main/4.png">
 </p>
 
 Agora podemos ver uma tela com vários campos para o Appium, mas aqui podemos seguir na aba <i>Custom Server</i>, que já vem escolhida por padrão. Observamos também os seguintes campos já preenchidos:<br>
