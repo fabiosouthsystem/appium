@@ -521,7 +521,7 @@ Através de comando ADB! <3 Para isso, vamos para nosso celular em teste (emulad
 Visualmente fica assim:
 
 <p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/adbcurrentfocus.png">
+<img src="https://github.com/fabiosouthsystem/appium/blob/main/16.png">
 </p>
 
 Note que deixo em destaque o seguinte trecho do que foi retornado na estrutura:
@@ -530,7 +530,7 @@ Note que deixo em destaque o seguinte trecho do que foi retornado na estrutura:
 com.android.calculator2/com.android.calculator2.Calculator
 ```
 
-Ess é trecho em que temos tanto o valor de <i>appPackage</i> quanto o de <i>appActivity</i>. A divisão entre os dois campos se dá pela / (barra) que existe bem no meio do trecho. Sempre o que tiver antes da barra será o valor do package. O que tiver depois será o do activity da sua aplicação. Agora é só copiar e preencher nos campos com mostro a seguir:
+Este é trecho em que temos tanto o valor de <i>appPackage</i> quanto o de <i>appActivity</i>. A divisão entre os dois campos se dá pela / (barra) que existe bem no meio do trecho. Sempre o que tiver antes da barra será o valor do package. O que tiver depois será o do activity da sua aplicação. Agora é só copiar e preencher nos campos com mostro a seguir:
 
 ```bash
 {
@@ -545,17 +545,14 @@ Ess é trecho em que temos tanto o valor de <i>appPackage</i> quanto o de <i>app
 Visualmente fica assim (em destaque no JSON o que eu acrescentei):
 
 <p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/desireddetailed.png">
+<img src="https://github.com/fabiosouthsystem/appium/blob/main/17.png">
 </p>
 
 Agora, com todos os valores preenchidos, você pode salvar novamente esta configuração clicando em <i>Save As...</i> e em seguida podemos iniciar nossa sessão clicando em <i>Start Session</i>. Quando a sessão for iniciada, você verá que agora o print da tela será direto da aplicação Calculadora, que foi a que indiquei nos campos de <i>appPackage</i> e de <i>appActivity</i>. Veja que no seu dispositivo (emulado ou real) também vai estar na mesma tela que você indicou:
 
 <p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/appiumdetailed.png">
+<img src="https://github.com/fabiosouthsystem/appium/blob/main/18.png">
 </p>
-
-📝 **Sugestão de exercícios:**<br>
-Tente utilizar o comando ADB deste tutorial para identificar pacote e activity em aplicações diferentes, inclusive alguma que você baixou no Tutorial 1.
 
 **Links Importantes para este tutorial:**<br>
 Página oficial do Appium com os Desired Capabilities listados: http://appium.io/docs/en/writing-running-appium/caps/
@@ -572,6 +569,7 @@ Realizar a identificação de elementos é muito fácil quando estamos trabalhan
 
 Com falei mais acima, identificar elementos é **relativamente simples**, **porém, o grande desafio** do mapeamento de elementos está em mapear de maneira inteligente e eficiente, de maneira que seu código não vá quebrar e, além disso, de maneira que a manutenabilidade do seu código não seja comprometida.
 <br>
+
 **Qual a melhor prática?** <br>
 No mundo perfeito, todos os elementos de uma aplicação/página web estão identificados seguindo boas práticas de desenvolvimento, com IDs intuitivos e únicos. Outro excelente caminho é se você tem acesso aos desenvolvedores da aplicação e consegue solicitar esse tipo de ajuste a eles. Porém, sabemos que essa é uma realidade muito específica e que não estará presente na maioria das aplicações que formos interagir - especialmente agora na nossa fase de estudos.
 
@@ -606,15 +604,12 @@ A prática ruim mais comum que vejo acontecer é o uso de XPATH longos, sem trat
 Para realizar a identificação de elementos, basta dar um clique no elemento que você deseja mapear e, na barra lateral direita, irá aparecer uma lista de opções de valores que você pode utilizar no seu mapeamento:
 
 <p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/appiumIdentifyElements.png">
+<img src="https://github.com/fabiosouthsystem/appium/blob/main/19.png">
 </p>
 <br>
 
 No meu print, utilizei o elemento "9" e me foi retornado 2 opções: id, xpath. Como o número 9 tem ID e vejo que ele é único (clicando nos demais elementos pude perceber isso), então decidi que o valor de ID é a melhor abordagem para eu seguir na identificação dos elementos da minha calculadora.
 
-📝 **Sugestão de exercício:**
-<br>
-Para praticar um pouco mais, sugiro que você vá observando a diferença entre elementos da sua aplicação. Tente também mapear elementos de alguma outra aplicação e observar se você tem o campo de ID e XPath.
 
 ___
 # Tutorial 4: Realizando atividades de GESTOS via Appium
@@ -636,13 +631,13 @@ Vamos dividir este tutorial para cada uma das funcionalidades: <i>Swipe by Coord
 Esta funcionalidade de fazer <i>swipe</i>, ou melhor, de deslizar o dedo na tela em uma direção é muito utilizada (especialmente no Android) para abrir menu suspenso (inferior ou superior) mudar de tela, encerrar aplicações, inserir senha personalizada de desbloquear tela, etc. No Appium, para utilizar esta funcionalidade, é só clicar no botão que está em destaque na imagem abaixo:
 
 <p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/SwipeByCoordinates.png">
+<img src="https://github.com/fabiosouthsystem/appium/blob/main/20.png">
 </p>
 
 Para exemplificar o uso dessa funcionalidade, vou realizar a ação de baixar o menu suspenso superior do dispositivo Android. Com minha sessão do Appium iniciada para o meu Android emulado, irei realizar o gesto de deslizar o dedo a partir do topo da tela até mais ou menos a metade.
 
 <p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/gifcoordinates.gif">
+<img src="https://github.com/fabiosouthsystem/appium/blob/main/21.gif">
 </p>
 
 Note que quando posicionamos o cursor do mouse na tela com a funcionalidade de <i>Swipe</i>, o canto superior esquerdo nos diz a posição do cursor em X e Y. Isso significa a localização que você está na tela e esses valores podem variar de acordo com o tamanho da sua tela. De ação, cliquei bem na margem superior no meio da tela e daí já dá pra ver um ponto indicando a localização do clique. Depois, vou um pouco pra metade pra baixo da dela e realizo outro clique. Em seguida o Appium executa a ação e o menu superior aparece no Appium e no dispositivo emulado.
@@ -652,7 +647,7 @@ Note que quando posicionamos o cursor do mouse na tela com a funcionalidade de <
 É indiscutível a importância do gesto de toque na tela em um dispositivo móvel :) Como se trata de algo dependente de posição (X, Y) na tela, às vezes isso pode ser um desafio de tratar em automação. Esta funcionalidade também está presente no Appium e pode ser encontrara através do botão que destaco a seguir:
 
 <p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/TapByCoordinates.png">
+<img src="https://github.com/fabiosouthsystem/appium/blob/main/22.png">
 </p>
 
 Para exemplificar esta funcionalidade, irei realizar a ação de abrir um aplicativo que estiver em minha tela inicial, simplesmente tocando na exata posição que ele está na tela. Vamos ao gif demonstrativo:
