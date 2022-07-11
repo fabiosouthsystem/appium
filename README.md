@@ -1,5 +1,7 @@
 
-
+<p align="center">
+<img src="https://github.com/fabiosouthsystem/appium/blob/main/ap.png">
+</p>
 <i>Material recomendado pela <a href="https://github.com/appium/appium/tree/master/sample-code/python#tutorial">documentação oficial do Appium</a>.</i>
 </div>
 
