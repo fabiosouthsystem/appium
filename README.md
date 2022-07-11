@@ -329,77 +329,64 @@ Para iniciarmos uma sessão vamos precisar de pelo menos 2 campos, que são:
 }
 ```
 
-**Atenção:** para entender como obter o valor do nome do seu dispositivo, você vai precisar ler a seção mais adiante sobre [comandos ADB].
+**Atenção:** para entender como obter o valor do nome do seu dispositivo, você vai precisar ler a seção mais adiante sobre comandos ADB.
 
-Os nomes são bem intuitivos, e aí estou criando um dicionário com a chave <i>'platformName'</i> para indicar a plataforma que irei utilizar, que pode ser: Android, Windows, iOS. 
-Já o identificador do dispositivo móvel iremos inserir em <i>'deviceName'</i>, e podemos obter esse valor através do comando adb <i>'adb devices'</i> que já explicamos mais acima. Assim fica um exemplo de preenchimento destes campos básicos e ao lado já o retorno do conteúdo em JSON:
+Os nomes são bem intuitivos, devemos criar um dicionário com a chave <i>'platformName'</i> para indicar a plataforma que irei utilizar, que pode ser: Android, Windows, iOS. 
+O identificador do dispositivo móvel que iremos inserir em <i>'deviceName'</i>, podemos obter esse valor através do comando adb <i>'adb devices'</i> que já explicamos anteriormente. Assim fica um exemplo de preenchimento destes campos básicos e ao lado já o retorno do conteúdo em JSON:
 
 <p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/desiredcap1.png">
+<img src="https://github.com/fabiosouthsystem/appium/blob/main/6.png">
 </p>
 
-
+✨ **Dica muito importante:**
 **Página oficial do Appium listando todos os Desired Capabilities:** <br>http://appium.io/docs/en/writing-running-appium/caps/
 
 ___
 # Emulando um dispositivo Android através do Android Studio
 Podemos usar o Appium em dispositivos reais, dispositivos emulados ou até mesmo em farms de dispositivos da Amazon, que funcionam com o mesmo conceito de computação em nuvem, onde você aloca recursos sob demanda e paga apenas o que for consumido.
-Durante nossos estudos podemos utilizar dispositivos emulados para a realização dos nossos testes. Isso nos dá grande versatilidade pela possibilidade de escolher o tipo de dispositivo e a versão de Android que iremos utilizar. Desta forma, é possível validar o mesmo apk em cenários diversos apenas alterando configurações, onde atingimos uma característica muito forte no Android que é a granularidade de versões: https://developer.android.com/about/dashboards?hl=pt-br
+Podemos utilizar dispositivos emulados para a realização dos nossos testes. Isso nos dá grande versatilidade pela possibilidade de escolher o tipo de dispositivo e a versão de Android que iremos utilizar. É possível validar o mesmo apk em cenários diversos apenas alterando configurações, onde atingimos uma característica muito forte no Android que é a granularidade de versões: https://developer.android.com/about/dashboards?hl=pt-br
 
+✨ **Dica muito importante:**
 **Antes de tudo... o que é um dispositivo emulado?**<br>
-É a instanciação (criação) de um dispositivo que simula um celular real, só que ele é emulado a partir dos recursos da sua máquina. É como se fosse uma máquina virtual, só que o Sistema Operacional (imagem) utilizado será alguma versão oficial do Android e o formato da máquina será uma réplica do celular de verdade, inclusive sob aspectos de tamanho das telas.
+É a (criação) de um dispositivo que simula um celular real, só que ele é emulado a partir dos recursos da sua máquina. É como se fosse uma máquina virtual, só que o Sistema Operacional utilizado será alguma versão oficial do Android e o formato da máquina será uma réplica do celular de verdade, inclusive sob aspectos de tamanho das telas.
 
 Vamos utilizar um recurso do próprio <i>Android Studio</i> para instanciarmos nosso dispositivo emulado: o <i>Android Virtual Device Manager</i>. Para acessá-lo, basta abrir o seu <i>Android Studio</i> e seguir até o seguinte ícone:
 
 <p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/avdmanager.png">
+<img src="https://github.com/fabiosouthsystem/appium/blob/main/7.png">
 </p>
 
-Assim que você clicar no ícone do <i>AVD Manager</i>, o seguinte popup vai abrir e você vai clicar em <i>+ Create Virtual Device...</i> para criar o seu novo dispositivo emulado, como na imagem a seguir:
+Ao clicar no ícone do <i>AVD Manager</i>, o seguinte popup vai abrir e você vai clicar em <i>+ Create Virtual Device...</i> para criar o seu novo dispositivo emulado:
 
 <p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/avdmanager2.png">
+<img src="https://github.com/fabiosouthsystem/appium/blob/main/8.png">
 </p>
 
-Nesta nova tela, podemos escolher qual o tipo de dispositivo que queremos: TV, Phone, Wear OS, Tablet; além da marca do produto, tamanho e resoluções de tela e também a densidade. Você pode emular qualquer variação desses produtos. Vamos focar em **phone** e eu gosto bastante de utilizar o produto <i>Pixel 2</i> em meus estudos, já que é um produto da Google e que tem um ótimo tamanho de tela, mas você fique à vontade de utilizar a variação de Phone que você achar melhor. Escolhido isso, é só clicar em <i>Next</i>.
+Nesta nova tela, devemos escolher qual o tipo de dispositivo que queremos: TV, Phone, Wear OS, Tablet; tamanho e resoluções de tela e também a densidade. Vamos focar em **phone** o produto <i>Pixel 2</i>, já que é um produto da Google e que tem um ótimo tamanho de tela. Escolhido isso, é só clicar em <i>Next</i>.
 
 <p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/avdmanager3.png">
+<img src="https://github.com/fabiosouthsystem/appium/blob/main/9.png">
 </p>
 
-Escolhido o produto que você quer prosseguir em seus estudos, agora é hora de escolher a versão do Android que você irá emular em seu produto. Veja que existe uma lista com várias versões anteriores do Android disponíveis para download. Neste exato momento, estamos na versão do **Android Q** no mercado e o Android R já está com sua versão Beta disponível para download. Usei algumas vezes o Android Q mas não achei a imagem tão completa em termos de recursos como o **Android P**, que é minha versão favorita atualmente. Vou prosseguir nos testes com o Android P, mas fique à vontade para baixar a versão que você quiser. Ah, você pode criar dispositivos com versões de Android diferentes e ir usando pra ver qual versão você acha que atende melhor às suas necessidades. Caso a imagem ainda não esteja disponível para você, clique em download. Caso já tenha baixado, é só selecionar a imagem e clicar em <i>Next</i>
+Agora é hora de escolher a versão do Android que você irá emular em seu produto na lista abaixo. O **Android P**, que é minha versão favorita atualmente. Vou prosseguir nos testes com o Android P, mas fique à vontade para baixar a versão que você quiser. Caso a imagem ainda não esteja disponível para você, clique em download. Caso já tenha baixado, é só selecionar a imagem e clicar em <i>Next</i>
 
 <p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/avdmanager4.png">
+<img src="https://github.com/fabiosouthsystem/appium/blob/main/10.png">
 </p>
-
-Estou usando a seguinte configuração para meu dispositivo emulado:<br>
-**Modelo de Device:** Pixel 2<br>
-**Versão de Android:** Android P<br>
 
 Dispositivo criado, tente realizar algumas ações nele como abrir aplicativos, utilizar botões de acesso como Home, Back, Recent Apps.
-
-Um mundo de possibilidades que também podemos explorar com dispositivos Android é que podemos usar comandos ADB no nosso dispositivo emulado e já ver que ele responde da mesma maneira que um dispositivo real. A próxima seção vai falar um pouco sobre isso.
 
 **Lembra quando falamos dos Desired Capabilities?** Agora podemos adicionar a configuração para abrir o emulador em conjunto com a requisição de servidor do Appium. 
 Faremos isso a partir do nome que demos ao Virtual Device que cadastramos anteriormente. Assim:
 
 <p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/appiumAvd.png">
+<img src="https://github.com/fabiosouthsystem/appium/blob/main/11.png">
 </p>
-
-**Alguns pontos importantes sobre este tópico:**<br>
-- Em breve farei um material falando como emular um dispositivo iOS.<br>
-- Existem outras ferramentas que emulam dispositivos Androids mas, das que testei, nenhuma é tão boa quando a do Android Studio. Por esse motivo prefiro me manter nele e recomendo o uso.<br>
 
 ___
 
-<p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/adb.png">
-</p>
-
 # Comandos ADB
-ADB é uma abreviação para Android Debug Brigde. Grosseiramente traduzindo, é uma ferramenta que faz uma "ponte" de comunicação entre o seu computador e o seu dispositivo móvel Android através de linhas de comando. Através do ADB, é possível que possamos manipular o dispositivo através de comandos, de forma muito prática, como:
+ADB grosseiramente traduzindo, é uma ferramenta que faz uma "ponte" de comunicação entre o seu computador e o seu dispositivo móvel Android através de linhas de comando. Através do ADB, é possível que possamos manipular o dispositivo através de comandos, de forma muito prática, como:
 - Instalar/desinstalar aplicativos;
 - Mudar configurações internas, como: tempo de desligar tela, bloqueio/desbloqueio de tela, etc.
 - Habilitar/desabilitar funções de conexões, como: wifi, dados, modo avião.
@@ -408,18 +395,11 @@ ADB é uma abreviação para Android Debug Brigde. Grosseiramente traduzindo, é
 
 É também possível automatizar algumas atividades de rotina combinando comandos ADB e Python Script.
 
-Como o assunto sobre comandos ADB merece maior aprofundamento e dedicação, criei um repositório à parte para falar mais sobre o tema: [repo comandosadb](https://github.com/clarabez/comandosadb)
-
 **Links importantes desta seção:**<br>
 **Um pouco mais sobre comandos ADB:** https://developer.android.com/studio/command-line/adb?hl=pt-br<br>
 **Um pouco Python Script:** https://realpython.com/run-python-scripts/<br>
-**Meu Repositório sobre Comandos ADB:** https://github.com/clarabez/comandosadb<br>
 
 ___
-
-<p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/appiumtutoriais.png">
-</p>
 
 # Tutorial 1: instalando uma aplicação no meu dispositivo Android emulado
 
@@ -430,23 +410,19 @@ ___
     <li>Conta na Play Store</li>
 </ul>
 
-O primeiro de tudo é escolher algum aplicativo disponível na <i>Play Store</i> para a realização dos estudos. Ultimamente tenho utilizado o aplicativo das **Casas Bahia**, pois tem boa parte de seus elementos mapeados e também porque tem diversos menus, itens e uma excelente usabilidade, o que facilita no processo de aprendizado. Daí, vamos procurar pelo aplicativo das Casas Bahia na Play Store e vamos chegar na página do aplicativo que deve parecer como esta abaixo:
+O primeiro de tudo é escolher algum aplicativo disponível na <i>Play Store</i> para a realização dos estudos ou utilizar um APK.
 
-<p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/casasbahia.png">
-</p>
+Agora, é só copiar a URL da página principal do aplicativo:
 
-Agora, é só copiar a URL da página principal do aplicativo, que no meu caso é o seguinte valor:
-
-https://play.google.com/store/apps/details?id=com.novapontocom.casasbahia
+https://urldapagina
 
 Agora vamos acessar um site chamado Evozi, que tem como objetivo baixar qualquer aplicativo da Play Store tendo como base apenas o endereço URL da aplicação da Play Store, como mostro a seguir:
 
 <p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/evozi.png">
+<img src="https://github.com/fabiosouthsystem/appium/blob/main/12.png">
 </p>
 
-Agora é só clicar em **Generate Download Link** e realizar o download da sua aplicação. Veja que ela será baixada no formato <i>.apk</i>. Agora é só salvar em alguma pasta do seu computador e vamos instalar essa aplicação em seu dispositivo emulado, e isso podemos fazer de duas maneiras: segurando e arrastando o aplicativo; utilizando comando ADB. Vou ensinar as duas formas.
+Clique em **Generate Download Link** e faça o download da sua aplicação. Ela será baixada no formato <i>.apk</i>. Agora é só salvar no seu computador e vamos instalar essa aplicação em seu dispositivo emulado, e isso podemos fazer de duas maneiras: segurando e arrastando o aplicativo; utilizando comando ADB. Vou ensinar as duas formas.
 
 **Segurando e arrastando:**<br>
 Essa forma é super simples, basta que você esteja com seu dispositivo emulado ativo e em paralelo abra a pasta que sua aplicação está. Agora, segure o seu aplicativo e arraste até o seu dispositivo móvel e, quando chegar no dispositivo, pode soltar. Você verá que vai aparecer uma imagem de <i>instalando...</i> e em poucos segundos sua aplicação estará disponível em seu dispositivo. É só acessar via menu e utilizar para ver que funciona direitinho.
@@ -456,14 +432,6 @@ Esta forma é mais elegante. É só você abrir o terminal, ir até a pasta que 
 ```bash
 adb install nome-do-apk
 ```
-
-Com isso, o aplicativo deve ser instalado corretamente e já aparecer disponível na lista de aplicações do seu dispositivo.
-
-**Observação:**<br>
-Aplicações na Play Store normalmente são bem ativas e constantemente sofrem alguma atualização de versão. Nessas atualizações, pode ser que alguma aplicação pare de funcionar em seu dispositivo. Por exemplo, já me aconteceu de a aplicação das Casas Bahia não mais funcionar em meu dispositivo porque deixou de ser compatível com a arquitetura dos dispositivos emulados. Isso pode acontecer. Caso isso aconteça com você, é só escolher uma outra aplicação para seguir seus estudos.
-
-📝 **Sugestão de exercícios:**<br>
-Tente baixar outras aplicações de sua preferência e tente instalar em seu dispositivo via comando ADB e também arrastando o pacote até seu dispositivo.
 
 **Links utilizados neste tutorial:**<br>
 **Evozi - APK Downloader:** https://apps.evozi.com/apk-downloader/<br>
@@ -480,7 +448,7 @@ ___
     <li>Appium Desktop configurado e funcionando</li>
 </ul>
 
-Caso você ainda não tenha lido a seção [**Iniciando com o Appium**](https://github.com/clarabez/appium/blob/master/README.md#tutorial-2-desired-capabilities-o-que-s%C3%A3o-e-como-iniciar-uma-sess%C3%A3o-com-o-appium), recomendo que você dê um pulo lá para ler alguns conceitos que vai ajudar bastante neste segundo tutorial, especialmente porque fala da importância que são os <i>Desired Capabilites</i> para o Appium. Reforçando o que foi dito por lá, os <i>Desired Capabilites</i> são uma parte muito especial e importante quando estamos trabalhando com Appium. É a partir deles que vamos dizer o que queremos fazer exatamente utilizando o Appium.
+Caso você ainda não tenha lido a seção **Iniciando com o Appium**, recomendo que você dê um pulo lá para ler alguns conceitos que vai ajudar bastante neste segundo tutorial, especialmente porque fala da importância que são os <i>Desired Capabilites</i> para o Appium. Reforçando o que foi dito por lá, os <i>Desired Capabilites</i> são uma parte muito especial e importante quando estamos trabalhando com Appium. É a partir deles que vamos dizer o que queremos fazer exatamente utilizando o Appium.
 
 Como mostra a [documentação oficial do Appium sobre os Desired Capabilites](http://appium.io/docs/en/writing-running-appium/caps/), temos uma extensa lista de opções de uso e podemos partir de um uso mais genérico até um uso mais específico. Aqui vamos realizar a ação destas nesses dois formatos.
 
@@ -495,12 +463,10 @@ Para isso, vamos precisar identificar apenas qual o <i>platformName</i> e o <i>d
 O comando irá retornar algo mais ou menos assim:
 
 <p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/adb%20devices.png">
+<img src="https://github.com/fabiosouthsystem/appium/blob/main/13.png">
 </p>
 
 Assim que dou o comando <i>adb devices</i> o serviço ADB é iniciado e em seguida o valor de identificação do meu celular é retornado, que no caso foi: **emulator-5554**. É este o valor que vamos usar no campo <i>deviceName</i>. 
-
-**Uma informação importante:** <br>Estou utilizando um celular emulado, portanto este é o valor padrão do <i>Android Device Manager</i> do <i>Android Studio</i> para 1 dispositivo emulado. Se você estiver utilizando um dispositivo real, este valor será bem diferente do que foi retornado pra mim.
 
 Segue então valores que irei utiliar para o <i>Desired Capabilities</i>:
 
@@ -515,15 +481,15 @@ Segue então valores que irei utiliar para o <i>Desired Capabilities</i>:
 Agora com os valores identificados, podemos abrir o Appium até chegarmos na tela que temos a aba de <i>Desired Capabilites</i> e preencher os campos como mostra a imagem a seguir:
 
 <p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/desired_generic.png">
+<img src="https://github.com/fabiosouthsystem/appium/blob/main/14.png">
 </p>
 
-Repare que eu insiro o valor apenas na aba <i>Desired Capabilities</i> e automaticamente o Appium converte tudo em JSON na tela ao lado, onde aponto com uma seta. Uma dica que acrescento é a de salvar essa sua configuração, pois ela será a base de alguns outros tutoriais que vamos fazer. Para isso, é só clicar em **Save As**. Para acessar qualquer capability já salva, é só acessar a aba <i>Save Capability Sets</i>, que fica ao lado da aba <i>Desired Capabilities</i>.
+Eu insiro o valor apenas na aba <i>Desired Capabilities</i> e automaticamente o Appium converte tudo em JSON na tela ao lado, onde aponto com uma seta. Uma dica que acrescento é a de salvar essa sua configuração, pois ela será a base de alguns outros tutoriais que vamos fazer. Para isso, é só clicar em **Save As**. Para acessar qualquer capability já salva, é só acessar a aba <i>Save Capability Sets</i>, que fica ao lado da aba <i>Desired Capabilities</i>.
 
 Agora, é só clicar no botão **Start Session** que o Appium irá iniciar uma sessão com base nas informações que indicamos. Com os campos corretos e identificados (ou seja, celular detectado e compatível com o que você informou), agora podemos ver a seguinte tela:
 
 <p align="center">
-<img src="https://github.com/clarabez/appium/blob/master/images/appimstarted1.png">
+<img src="https://github.com/fabiosouthsystem/appium/blob/main/15.png">
 </p>
 
 Esta é a tela de início de atividades com o Appium, que veremos nos próximos tutoriais. Aqui já é possível ver que o Appium tirou um <i>screenshot</i> da tela em que estava o nosso celular no momento em que demos início à sessão. Essa é uma das características do Appium: ele espelha a tela exatamente de onde você iniciou a sessão - em casos de uso genérico do <i>Desired Capabilities</i>. Além disso, também já vemos novos botões e novas seções. Agora vamos ver como podemos iniciar uma sessão sendo mais específicos com as informações que queremos que o Appium trate.
